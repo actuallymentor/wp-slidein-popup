@@ -4,7 +4,7 @@ function wpsp_functionality() {
 	?>
 	<div class="wpsp_overlay"></div>
 	<div class="wpsp_slidein"></div>
-	<a id="scpo_close">No thanks, I'm good [X]</a>
+	<a id="scpo_close">No thanks, I'm good</a>
 	<div class="wpsp_box">
 		<p id="wpsp_title"><?php echo $wpsp_config['wpsp_title']; ?></p>
 		<p id="wpsp_motivation"><?php echo $wpsp_config['wpsp_convincer']; ?></p>
@@ -32,7 +32,7 @@ function wpsp_functionality() {
 			position: fixed;
 			top: 0;
 			left: -55%;
-			background-color: red;
+			background-color: #dc3e29;
 			width: 55%;
 			height: 100%;
 			z-index: 11;
@@ -52,6 +52,12 @@ function wpsp_functionality() {
 			display: inline-block;
 			padding: 0 5px;
 		}
+		.scpo_box input {
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 		<?php echo $wpsp_config['wpsp_custom_css']; ?>
 	</style>
 
