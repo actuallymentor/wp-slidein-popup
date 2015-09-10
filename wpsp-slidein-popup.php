@@ -20,10 +20,20 @@ if ( is_admin() ){
 	/////////////////////////
 	include( __DIR__ . '/functions/admin.php');
 }
+
 ////////////////
 //// Admin and print css
 ////////////////
 include( __DIR__ . '/functions/css.php');
+
+////////////////
+//// Cookie js
+////////////////
+function wpsp_cookieJs() {
+	wp_enqueue_script( 'cookie-js', __DIR__ . '/includes/js.cookie.js', array(), '2.0.3', true );
+}
+add_action( 'wp_enqueue_scripts', 'wpsp_cookieJs' );
+
 
 ////////////////
 //// Functionality
