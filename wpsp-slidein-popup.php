@@ -8,9 +8,7 @@
  * Author URI: https://www.skillcollector.com
  * License: Tweet me for thanks at @ActuallyMentor
  */
-if($_GET['debug']) {
-	echo '<script>console.log("Plugin Working")</script>'; 
-}
+
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 $wpsp_config = include( __DIR__ . '/wpsp_vars.php');
 
@@ -38,7 +36,5 @@ add_action( 'wp_enqueue_scripts', 'wpsp_cookieJs' );
 ////////////////
 //// Functionality
 ////////////////
-if ($_GET['run']){
 include( __DIR__ . '/functions/popper.php');
-}
 ?>

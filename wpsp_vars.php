@@ -9,5 +9,6 @@ return array (
 	'wpsp_title' => get_option('wpsp_title'),
 	'wpsp_convincer' => get_option('wpsp_convincer'),
 	'wpsp_recurring' => get_option('wpsp_recurring'),
+	'wpsp_active' => get_option('wpsp_active'),
 	);
 ?>

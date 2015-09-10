@@ -70,7 +70,7 @@ function wpsp_functionality() {
 	</script>
 	<?php
 }
-if ( !$COOKIE['wpsp_silent'] ) {
+if ( $wpsp_config['wpsp_active'] == "on" ) {
 	add_action( 'wp_footer', 'wpsp_functionality' );
 }
 ?>

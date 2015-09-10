@@ -13,6 +13,7 @@ function register_wpsp_settings() { // whitelist options
 	register_setting( 'wpsp_settings', 'wpsp_title' );
 	register_setting( 'wpsp_settings', 'wpsp_convincer' );
 	register_setting( 'wpsp_settings', 'wpsp_recurring' );
+	register_setting( 'wpsp_settings', 'wpsp_active' );
 }
 
 function wpsp_options() {
@@ -27,18 +28,26 @@ function wpsp_options() {
 			<?php settings_fields( 'wpsp_settings' ); ?>
 			<?php do_settings_sections( 'wpsp_settings' ); ?>
 			
-			<p>Form html</p>
-			<textarea type="text" name="wpsp_formcode"><?php echo esc_attr( get_option('wpsp_formcode') ); ?></textarea>
-			<p>Custom css</p>
-			<textarea type="text" name="wpsp_custom_css"><?php echo esc_attr( get_option('wpsp_custom_css') ); ?></textarea>
+
+			<p>Optin status</p>
+			<select name="wpsp_active">
+				<option value="on" <?php if ( esc_attr( get_option('wpsp_active') ) == "on" ) { echo "selected"; }; ?> >On</option>
+				<option value="off" <?php if ( esc_attr( get_option('wpsp_active') ) != "on" ) { echo "selected"; }; ?> >Off</option>
+			<select>
 			<p>Delay in ms</p>
 			<input type="number" name="wpsp_delay" value="<?php echo esc_attr( get_option('wpsp_delay') ); ?>" />
+			<p>Show optin every how many days?</p>
+			<input type="number" name="wpsp_recurring" value="<?php echo esc_attr( get_option('wpsp_recurring') ); ?>" />
 			<p>Title of popup</p>
 			<input type="text" name="wpsp_title" value="<?php echo esc_attr( get_option('wpsp_title') ); ?>" />
 			<p>Popup description</p>
 			<input type="text" name="wpsp_convincer" value="<?php echo esc_attr( get_option('wpsp_convincer') ); ?>" />
-			<p>Show optin every how many days?</p>
-			<input type="number" name="wpsp_recurring" value="<?php echo esc_attr( get_option('wpsp_recurring') ); ?>" />
+			<p>Form html</p>
+			<textarea type="text" name="wpsp_formcode"><?php echo esc_attr( get_option('wpsp_formcode') ); ?></textarea>
+			<p>Custom css</p>
+			<textarea type="text" name="wpsp_custom_css"><?php echo esc_attr( get_option('wpsp_custom_css') ); ?></textarea>
+			
+			
 			<?php submit_button(); ?>
 		
 		</form>
