@@ -64,7 +64,7 @@ function wpsp_functionality() {
 			$('.wpsp_box, #wpsp_close').delay(<?php echo $wpsp_config['wpsp_delay'] + 400; ?>).fadeIn(750);
 			$('#wpsp_close, .wpsp_overlay').click(function(){
 				$('.wpsp_overlay, .wpsp_box, #wpsp_close, .wpsp_slidein').fadeOut(400);
-				Cookies.set('wpsp_silent', 'true', { expires: 7 });
+				Cookies.set('wpsp_silent', 'true', { expires: <?php echo $wpsp_config['wpsp_recurring']; ?> });
 			});
 		});
 	</script>

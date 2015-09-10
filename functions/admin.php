@@ -12,6 +12,7 @@ function register_wpsp_settings() { // whitelist options
 	register_setting( 'wpsp_settings', 'wpsp_delay' );
 	register_setting( 'wpsp_settings', 'wpsp_title' );
 	register_setting( 'wpsp_settings', 'wpsp_convincer' );
+	register_setting( 'wpsp_settings', 'wpsp_recurring' );
 }
 
 function wpsp_options() {
@@ -31,11 +32,13 @@ function wpsp_options() {
 			<p>Custom css</p>
 			<textarea type="text" name="wpsp_custom_css"><?php echo esc_attr( get_option('wpsp_custom_css') ); ?></textarea>
 			<p>Delay in ms</p>
-			<input type="text" name="wpsp_delay" value="<?php echo esc_attr( get_option('wpsp_delay') ); ?>" />
+			<input type="number" name="wpsp_delay" value="<?php echo esc_attr( get_option('wpsp_delay') ); ?>" />
 			<p>Title of popup</p>
 			<input type="text" name="wpsp_title" value="<?php echo esc_attr( get_option('wpsp_title') ); ?>" />
 			<p>Popup description</p>
 			<input type="text" name="wpsp_convincer" value="<?php echo esc_attr( get_option('wpsp_convincer') ); ?>" />
+			<p>Show optin every how many days?</p>
+			<input type="number" name="wpsp_recurring" value="<?php echo esc_attr( get_option('wpsp_wpsp_recurring') ); ?>" />
 			<?php submit_button(); ?>
 		
 		</form>

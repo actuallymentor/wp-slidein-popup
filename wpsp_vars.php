@@ -7,7 +7,7 @@ return array (
 	'wpsp_formcode' => get_option('wpsp_formcode'),
 	'wpsp_delay' => get_option('wpsp_delay'),
 	'wpsp_title' => get_option('wpsp_title'),
-	'wpsp_convincer' => get_option('wpsp_concinver'),
+	'wpsp_convincer' => get_option('wpsp_convincer'),
+	'wpsp_convincer' => get_option('wpsp_recurring'),
 	);
-
 ?>
