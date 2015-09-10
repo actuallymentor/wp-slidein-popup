@@ -1,9 +1,5 @@
 <?php
 
-if($_GET['debug']) {
-	echo '<script>console.log("Working")</script>'; 
-}
-
 function wpsp_functionality() {
 	global $wpsp_config;
 	?>
@@ -68,11 +64,13 @@ function wpsp_functionality() {
 			$('.wpsp_box, #wpsp_close').delay(<?php echo $wpsp_config['wpsp_delay'] + 400; ?>).fadeIn(750);
 			$('#wpsp_close, .wpsp_overlay').click(function(){
 				$('.wpsp_overlay, .wpsp_box, #wpsp_close, .wpsp_slidein').fadeOut(400);
+				Cookies.set('wpsp_silent', 'true', { expires: 7 });
 			});
 		});
 	</script>
 	<?php
 }
-add_action( 'wp_footer', 'wpsp_functionality' );
-
+if ( !$COOKIE['wpsp_silent'] ) {
+	add_action( 'wp_footer', 'wpsp_functionality' );
+}
 ?>
