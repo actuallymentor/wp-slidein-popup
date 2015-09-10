@@ -27,9 +27,9 @@ function wpsp_options() {
 			<?php do_settings_sections( 'wpsp_settings' ); ?>
 			
 			<p>Form html</p>
-			<textarea type="text" name="wpsp_formcode" value="<?php echo esc_attr( get_option('wpsp_formcode') ); ?>" ></textarea>
+			<textarea type="text" name="wpsp_formcode"><?php echo esc_attr( get_option('wpsp_formcode') ); ?></textarea>
 			<p>Custom css</p>
-			<textarea type="text" name="wpsp_custom_css" value="<?php echo esc_attr( get_option('wpsp_custom_css') ); ?>" ></textarea>
+			<textarea type="text" name="wpsp_custom_css"><?php echo esc_attr( get_option('wpsp_custom_css') ); ?></textarea>
 			<p>Delay in ms</p>
 			<input type="text" name="wpsp_delay" value="<?php echo esc_attr( get_option('wpsp_delay') ); ?>" />
 			<p>Title of popup</p>

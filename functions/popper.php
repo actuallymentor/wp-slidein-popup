@@ -1,4 +1,9 @@
 <?php
+
+if($_GET['debug']) {
+	echo '<script>console.log("Working")</script>'; 
+}
+
 function wpsp_functionality() {
 	global $wpsp_config;
 	?>
@@ -16,7 +21,8 @@ function wpsp_functionality() {
 			display: none;
 			bottom: 10px;
 			right: 10px;
-			z-index: 13;
+			font-weight: bold;
+			z-index: 9003;
 		}
 		.wpsp_overlay {
 			position: fixed;
@@ -26,7 +32,7 @@ function wpsp_functionality() {
 			background-color: rgba(0,0,0,0.5);
 			height: 100%;
 			width: 100%;
-			z-index: 10;
+			z-index: 9000;
 		}
 		.wpsp_slidein {
 			position: fixed;
@@ -35,7 +41,7 @@ function wpsp_functionality() {
 			background-color: #dc3e29;
 			width: 55%;
 			height: 100%;
-			z-index: 11;
+			z-index: 9001;
 		}
 		.wpsp_box {
 			position: fixed;
@@ -46,18 +52,18 @@ function wpsp_functionality() {
 			transform: translateY(-50%);
 			text-align: center;
 			width: 100%;
-			z-index: 12;
+			z-index: 9002;
 		}
 		.wpsp_box #wpsp_motivation, .wpsp_box form {
 			display: inline-block;
 			padding: 0 5px;
 		}
 		.scpo_box input {
-    padding: 10px;
-    border: none;
-    font-weight: bold;
-    text-transform: uppercase;
-}
+			padding: 10px;
+			border: none;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
 		<?php echo $wpsp_config['wpsp_custom_css']; ?>
 	</style>
 
@@ -65,10 +71,10 @@ function wpsp_functionality() {
 		$(function(){
 			$('.wpsp_overlay').delay(<?php echo $wpsp_config['wpsp_delay']; ?>).fadeIn(400);
 			$('.wpsp_slidein').delay(<?php echo $wpsp_config['wpsp_delay'] + 400; ?>).animate({left:0});
-			$('.wpsp_box').delay(<?php echo $wpsp_config['wpsp_delay'] + 400; ?>).fadeIn(750);
+			$('.wpsp_box, #scpo_close').delay(<?php echo $wpsp_config['wpsp_delay'] + 400; ?>).fadeIn(750);
 			$('#scpo_close, .scpo_overlay').click(function(){
-			$('.scpo_overlay, .scpo_box, #scpo_close, .scpo_slidein').fadeOut(400);
-		});
+				$('.scpo_overlay, .scpo_box, #scpo_close, .scpo_slidein').fadeOut(400);
+			});
 		});
 	</script>
 	<?php
