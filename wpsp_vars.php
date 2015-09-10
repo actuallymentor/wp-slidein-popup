@@ -8,6 +8,6 @@ return array (
 	'wpsp_delay' => get_option('wpsp_delay'),
 	'wpsp_title' => get_option('wpsp_title'),
 	'wpsp_convincer' => get_option('wpsp_convincer'),
-	'wpsp_convincer' => get_option('wpsp_recurring'),
+	'wpsp_recurring' => get_option('wpsp_recurring'),
 	);
 ?>

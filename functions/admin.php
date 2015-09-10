@@ -38,7 +38,7 @@ function wpsp_options() {
 			<p>Popup description</p>
 			<input type="text" name="wpsp_convincer" value="<?php echo esc_attr( get_option('wpsp_convincer') ); ?>" />
 			<p>Show optin every how many days?</p>
-			<input type="number" name="wpsp_recurring" value="<?php echo esc_attr( get_option('wpsp_wpsp_recurring') ); ?>" />
+			<input type="number" name="wpsp_recurring" value="<?php echo esc_attr( get_option('wpsp_recurring') ); ?>" />
 			<?php submit_button(); ?>
 		
 		</form>
