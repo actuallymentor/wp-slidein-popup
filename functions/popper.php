@@ -9,14 +9,14 @@ function wpsp_functionality() {
 	?>
 	<div class="wpsp_overlay"></div>
 	<div class="wpsp_slidein"></div>
-	<a id="scpo_close">No thanks, I'm good</a>
+	<a id="wpsp_close">No thanks, I'm good</a>
 	<div class="wpsp_box">
 		<p id="wpsp_title"><?php echo $wpsp_config['wpsp_title']; ?></p>
 		<p id="wpsp_motivation"><?php echo $wpsp_config['wpsp_convincer']; ?></p>
 		<?php echo $wpsp_config['wpsp_formcode']; ?>
 	</div>
 	<style>
-		#scpo_close {
+		#wpsp_close {
 			position: fixed;
 			display: none;
 			bottom: 10px;
@@ -58,12 +58,6 @@ function wpsp_functionality() {
 			display: inline-block;
 			padding: 0 5px;
 		}
-		.scpo_box input {
-			padding: 10px;
-			border: none;
-			font-weight: bold;
-			text-transform: uppercase;
-		}
 		<?php echo $wpsp_config['wpsp_custom_css']; ?>
 	</style>
 
@@ -71,9 +65,9 @@ function wpsp_functionality() {
 		$(function(){
 			$('.wpsp_overlay').delay(<?php echo $wpsp_config['wpsp_delay']; ?>).fadeIn(400);
 			$('.wpsp_slidein').delay(<?php echo $wpsp_config['wpsp_delay'] + 400; ?>).animate({left:0});
-			$('.wpsp_box, #scpo_close').delay(<?php echo $wpsp_config['wpsp_delay'] + 400; ?>).fadeIn(750);
-			$('#scpo_close, .scpo_overlay').click(function(){
-				$('.scpo_overlay, .scpo_box, #scpo_close, .scpo_slidein').fadeOut(400);
+			$('.wpsp_box, #wpsp_close').delay(<?php echo $wpsp_config['wpsp_delay'] + 400; ?>).fadeIn(750);
+			$('#wpsp_close, .wpsp_overlay').click(function(){
+				$('.wpsp_overlay, .wpsp_box, #wpsp_close, .wpsp_slidein').fadeOut(400);
 			});
 		});
 	</script>
