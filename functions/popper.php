@@ -4,12 +4,20 @@ function wpsp_functionality() {
 	?>
 	<div class="wpsp_overlay"></div>
 	<div class="wpsp_slidein"></div>
+	<a id="scpo_close">No thanks, I'm good [X]</a>
 	<div class="wpsp_box">
-	<p id="wpsp_title"><?php echo $wpsp_config['wpsp_title']; ?></p>
+		<p id="wpsp_title"><?php echo $wpsp_config['wpsp_title']; ?></p>
 		<p id="wpsp_motivation"><?php echo $wpsp_config['wpsp_convincer']; ?></p>
 		<?php echo $wpsp_config['wpsp_formcode']; ?>
 	</div>
 	<style>
+		#scpo_close {
+			position: fixed;
+			display: none;
+			bottom: 10px;
+			right: 10px;
+			z-index: 13;
+		}
 		.wpsp_overlay {
 			position: fixed;
 			display: none;
@@ -52,6 +60,9 @@ function wpsp_functionality() {
 			$('.wpsp_overlay').delay(<?php echo $wpsp_config['wpsp_delay']; ?>).fadeIn(400);
 			$('.wpsp_slidein').delay(<?php echo $wpsp_config['wpsp_delay'] + 400; ?>).animate({left:0});
 			$('.wpsp_box').delay(<?php echo $wpsp_config['wpsp_delay'] + 400; ?>).fadeIn(750);
+			$('#scpo_close, .scpo_overlay').click(function(){
+			$('.scpo_overlay, .scpo_box, #scpo_close, .scpo_slidein').fadeOut(400);
+		});
 		});
 	</script>
 	<?php
