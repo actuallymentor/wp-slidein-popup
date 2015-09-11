@@ -29,22 +29,22 @@ function wpsp_options() {
 			<?php do_settings_sections( 'wpsp_settings' ); ?>
 			
 
-			<p>Optin status</p>
+			<p>Switch optin on and off:</p>
 			<select name="wpsp_active">
 				<option value="on" <?php if ( esc_attr( get_option('wpsp_active') ) == "on" ) { echo "selected"; }; ?> >On</option>
 				<option value="off" <?php if ( esc_attr( get_option('wpsp_active') ) != "on" ) { echo "selected"; }; ?> >Off</option>
 			<select>
-			<p>Delay in ms</p>
+			<p>How long before the optin should show? This is in ms, so 1000 means 1 second.</p>
 			<input type="number" name="wpsp_delay" value="<?php echo esc_attr( get_option('wpsp_delay') ); ?>" />
 			<p>Show optin every how many days?</p>
 			<input type="number" name="wpsp_recurring" value="<?php echo esc_attr( get_option('wpsp_recurring') ); ?>" />
-			<p>Title of popup</p>
+			<p>Title of the optin (top text):</p>
 			<input type="text" name="wpsp_title" value="<?php echo esc_attr( get_option('wpsp_title') ); ?>" />
-			<p>Popup description</p>
+			<p>Description of the optin (text left of form):</p>
 			<input type="text" name="wpsp_convincer" value="<?php echo esc_attr( get_option('wpsp_convincer') ); ?>" />
-			<p>Form html</p>
+			<p>Form html (you can use any html form here):</p>
 			<textarea type="text" name="wpsp_formcode"><?php echo esc_attr( get_option('wpsp_formcode') ); ?></textarea>
-			<p>Custom css</p>
+			<p>Custom CSS styles:</p>
 			<textarea type="text" name="wpsp_custom_css"><?php echo esc_attr( get_option('wpsp_custom_css') ); ?></textarea>
 			
 			
