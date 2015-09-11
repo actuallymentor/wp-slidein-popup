@@ -5,7 +5,7 @@ function wpsp_functionality() {
 	?>
 	<div class="wpsp_overlay"></div>
 	<div class="wpsp_slidein"></div>
-	<a id="wpsp_close">No thanks, I'm good</a>
+	<a id="wpsp_close">[X] Close</a>
 	<div class="wpsp_box">
 		<p id="wpsp_title"><?php echo $wpsp_config['wpsp_title']; ?></p>
 		<p id="wpsp_motivation"><?php echo $wpsp_config['wpsp_convincer']; ?></p>
@@ -15,7 +15,7 @@ function wpsp_functionality() {
 		#wpsp_close {
 			position: fixed;
 			display: none;
-			bottom: 10px;
+			top: 10px;
 			right: 10px;
 			font-weight: bold;
 			z-index: 9003;
