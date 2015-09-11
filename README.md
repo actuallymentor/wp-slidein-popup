@@ -1,6 +1,6 @@
 # WordPress Slidein Popup
 
-This WordPress plugin shows a signup <form> with a nice effect.
+This WordPress plugin shows a signup form with a nice effect.
 
 ## To use this plugin
 
