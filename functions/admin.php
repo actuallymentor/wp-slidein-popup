@@ -2,7 +2,7 @@
 add_action( 'admin_menu', 'wpsp_menu' );
 
 function wpsp_menu() {
-	add_options_page( 'wpsp Options', 'wpsp', 'manage_options', 'wpsp-settings', 'wpsp_options' );
+	add_options_page( 'WPSP Options', 'WP Slidein Popup', 'manage_options', 'wpsp-settings', 'wpsp_options' );
 	add_action( 'admin_init', 'register_wpsp_settings' );
 }
 

@@ -3,10 +3,10 @@
  * Plugin Name: WP Slidein Popup
  * Plugin URI: https://github.com/actuallymentor/wp-slidein-popup
  * Description: A pretty slidein effect for signups
- * Version: 0.0.1
+ * Version: 1.0.0
  * Author: Mentor Palokaj
  * Author URI: https://www.skillcollector.com
- * License: Tweet me for thanks at @ActuallyMentor
+ * License: GPLv2
  */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
