@@ -39,6 +39,12 @@ function wpsp_functionality() {
 			height: 100%;
 			z-index: 9001;
 		}
+		@media screen and (max-width: 768px) {
+			.wpsp_slidein {
+				width: 100%;
+				left: -100%;
+			}
+		}
 		.wpsp_box {
 			position: fixed;
 			display: none;
