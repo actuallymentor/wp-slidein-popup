@@ -76,7 +76,7 @@ function wpsp_functionality() {
 	</script>
 	<?php
 }
-if ( ($wpsp_config['wpsp_active'] == "on") && !$_COOKIE['wpsp_silent'] && !is_page() ) {
+if ( ($wpsp_config['wpsp_active'] == "on") && !$_COOKIE['wpsp_silent'] && is_single() ) {
 	add_action( 'wp_footer', 'wpsp_functionality' );
 }
 ?>
