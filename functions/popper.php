@@ -3,6 +3,7 @@
 function wpsp_functionality() {
 	global $wpsp_config;
 	?>
+	<?php if ( is_single() ): ?>
 	<div class="wpsp_overlay"></div>
 	<div class="wpsp_slidein"></div>
 	<a id="wpsp_close">[X] Close</a>
@@ -63,6 +64,8 @@ function wpsp_functionality() {
 		<?php echo $wpsp_config['wpsp_custom_css']; ?>
 	</style>
 
+	
+
 	<script>
 		$(function(){
 			$('.wpsp_overlay').delay(<?php echo $wpsp_config['wpsp_delay']; ?>).fadeIn(400);
@@ -74,8 +77,12 @@ function wpsp_functionality() {
 			});
 		});
 	</script>
+
+<?php endif ?>
+
 	<?php
 }
+
 if ( ($wpsp_config['wpsp_active'] == "on") && !$_COOKIE['wpsp_silent'] ) {
 	add_action( 'wp_footer', 'wpsp_functionality' );
 }

@@ -10,6 +10,7 @@
  */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+
 $wpsp_config = include( __DIR__ . '/wpsp_vars.php');
 
 if ( is_admin() ){
