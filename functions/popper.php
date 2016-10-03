@@ -67,15 +67,10 @@ function wpsp_functionality() {
 	
 
 	<script>
-		$(function(){
-			$('.wpsp_overlay').delay(<?php echo $wpsp_config['wpsp_delay']; ?>).fadeIn(400);
-			$('.wpsp_slidein').delay(<?php echo $wpsp_config['wpsp_delay'] + 400; ?>).animate({left:0});
-			$('.wpsp_box, #wpsp_close').delay(<?php echo $wpsp_config['wpsp_delay'] + 400; ?>).fadeIn(750);
-			$('#wpsp_close, .wpsp_overlay').click(function(){
-				$('.wpsp_overlay, .wpsp_box, #wpsp_close, .wpsp_slidein').fadeOut(400);
-				Cookies.set('wpsp_silent', 'true', { expires: <?php echo $wpsp_config['wpsp_recurring']; ?> });
-			});
-		});
+	var wpsp_slidein = {
+		delay: <?php echo $wpsp_config['wpsp_delay']; ?>,
+		expires: <?php echo $wpsp_config['wpsp_recurring']; ?>
+	}
 	</script>
 
 <?php endif ?>

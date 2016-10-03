@@ -35,6 +35,14 @@ add_action( 'wp_enqueue_scripts', 'wpsp_cookieJs' );
 
 
 ////////////////
+//// Popper js
+////////////////
+function wpsp_popper() {
+	wp_enqueue_script( 'popper-js', plugins_url('/includes/popper.js', __FILE__), ['jquery'], '2.0.3', true );
+}
+add_action( 'wp_enqueue_scripts', 'wpsp_popper' );
+
+////////////////
 //// Functionality
 ////////////////
 include( __DIR__ . '/functions/popper.php');
