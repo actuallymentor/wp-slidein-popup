@@ -1,3 +1,4 @@
+var $ = jQuery
 $(function(){
 	$('.wpsp_overlay').delay(wpsp_slidein.delay).fadeIn(400);
 	$('.wpsp_slidein').delay(wpsp_slidein.delay + 400).animate({left:0});
